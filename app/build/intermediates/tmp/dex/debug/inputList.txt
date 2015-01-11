@@ -1,0 +1,3 @@
+/Users/apple/AndroidStudioProjects/CustomListViewVolley/app/build/intermediates/classes/debug
+/Users/apple/AndroidStudioProjects/CustomListViewVolley/app/build/intermediates/pre-dexed/debug/volley-2bac30517d4da5922d0b0bf20f3593cd1cc61a54.jar
+/Users/apple/AndroidStudioProjects/CustomListViewVolley/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-56bfa5fd5598f9f82c3c9ce311944fd8a5205abc.jar
