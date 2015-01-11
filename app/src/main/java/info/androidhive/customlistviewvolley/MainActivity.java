@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
 						Log.d(TAG, response.toString());
 						hidePDialog();
 
-						// Parsing json
+						// Parsing json elsoft
 						for (int i = 0; i < response.length(); i++) {
 							try {
 
