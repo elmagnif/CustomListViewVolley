@@ -6,4 +6,30 @@
         android:showAsAction="never"
         android:title="@string/action_settings"/>
 
+    <item
+        android:id="@+id/action_fr"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_fr"/>
+
+    <item
+        android:id="@+id/action_en"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_en"/>
+
+
+    <item
+        android:id="@+id/action_ar"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_ar"/>
+
+
+    <item
+        android:id="@+id/action_ai"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_ai"/>
+
 </menu>

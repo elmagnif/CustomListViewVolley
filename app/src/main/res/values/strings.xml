@@ -3,6 +3,11 @@
 
     <string name="app_name">APANEWS </string>
     <string name="action_settings">Paramétres</string>
+    <string name="action_fr">Français</string>
+    <string name="action_en">Englais</string>
+    <string name="action_ar">العربية</string>
+    <string name="action_ai">Aide</string>
+
     <string name="hello_world">Hello world!</string>
 
 </resources>

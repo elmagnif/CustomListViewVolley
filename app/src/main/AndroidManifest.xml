@@ -26,9 +26,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ArticleRead"
-            android:label="Page Article"
-            />
+        <activity
+            android:name="info.androidhive.customlistviewvolley.ArticleRead"
+            android:label="Article"
+            ></activity>
+
+        <activity
+            android:name="info.androidhive.customlistviewvolley.AideActivity"
+            android:label="Aide"
+            ></activity>
     </application>
 
 </manifest>

@@ -13,14 +13,17 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,12 +43,17 @@ public class MainActivity extends Activity {
 	private ProgressDialog pDialog;
 	private List<Movie> movieList = new ArrayList<Movie>();
 	private ListView listView;
+    Button btnHelp;
+
 	private CustomListAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+        btnHelp = (Button) findViewById(R.id.action_ai);
+
 
 		listView = (ListView) findViewById(R.id.list);
 
@@ -58,26 +66,32 @@ public class MainActivity extends Activity {
 
 
 
-        //recuperation ID ARTICLE
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                //recuperation ID ARTICLE
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-
-
-                Intent intent = new Intent(MainActivity.this, ArticleRead.class);
-                startActivity(intent);
-
-               // TextView tv = (TextView)arg1.findViewById(R.id.releaseYear);
-                //String textvalue= tv.getText().toString();
-                //Object o = listView.getItemAtPosition(position);
-                //Toast.makeText(getApplicationContext(),"Article Selectionnee : "+textvalue, Toast.LENGTH_LONG).show();
-               // Intent intent = new Intent(MainActivity.this, ArticleRead.class);
-                //startActivity(intent);
+                    @Override
+                    public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 
 
-            }
-        });
+                        TextView tv = (TextView) arg1.findViewById(R.id.releaseYear);
+                        String textvalue = tv.getText().toString();
+                        //Object o = listView.getItemAtPosition(position);
+                        //Toast.makeText(getApplicationContext(),"Article Selectionnee : "+textvalue, Toast.LENGTH_LONG).show();
+
+
+                        // Intent i = new Intent(this, ArticleRead.class);
+                        //startActivity(i);
+                        Intent intent = new Intent(MainActivity.this, ArticleRead.class);
+                        startActivity(intent);
+
+                        //Animation Activity
+                        overridePendingTransition(R.animator.slidefromrightin, R.animator.slidetoleftout);
+                        //Animation Activity
+                        intent.putExtra("numero", textvalue);
+                        startActivityForResult(intent, 1);
+
+                    }
+                });
 
         //FIN recuperation ID ARTICLE
 
@@ -164,7 +178,40 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    if(item.getItemId() == R.id.action_ai){
 
+        Log.d("CLick Sur Button Aide", "elsoft " + url);
+
+        Intent intent = new Intent(MainActivity.this, AideActivity.class);
+        startActivity(intent);
+
+        //Animation Activity
+        overridePendingTransition(R.animator.slidefromrightin, R.animator.slidetoleftout);
+
+            }
+      else if(item.getItemId() == R.id.action_ar){
+
+            Log.d("CLick Sur Button Arabe", "elsoft " + url);
+
+            //Intent intent = new Intent(MainActivity.this, AideActivity.class);
+            //startActivity(intent);
+
+            //Animation Activity
+            //overridePendingTransition(R.animator.slidefromrightin, R.animator.slidetoleftout);
+
+        }
+
+
+
+
+            else{
+
+            }
+
+            return super.onOptionsItemSelected(item);
+            }
 
 
 }
